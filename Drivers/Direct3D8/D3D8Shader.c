@@ -48,7 +48,12 @@ D3D8_CreateInputLayout(const struct InputLayoutDesc *desc)
 		// see d3d8types.h
 		switch (a->type) {
 		case IAT_FLOAT:
-			type = a->count - 1;
+			switch (a->count) {
+			case 1: type = D3DVSDT_FLOAT1; break;
+			case 2: type = D3DVSDT_FLOAT2; break;
+			case 3: type = D3DVSDT_FLOAT3; break;
+			case 4: type = D3DVSDT_FLOAT4; break;
+			};
 			il->stride += sizeof(float) * a->count;
 		break;
 		case IAT_COLOR:
@@ -56,7 +61,10 @@ D3D8_CreateInputLayout(const struct InputLayoutDesc *desc)
 			il->stride += sizeof(UINT);
 		break;
 		case IAT_SHORT:
-			type = a->count + 5;
+			switch (a->count) {
+			case 2: type = D3DVSDT_SHORT2; break;
+			case 4: type = D3DVSDT_SHORT4; break;
+			};
 			il->stride += sizeof(short) * a->count;
 		break;
 		}

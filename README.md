@@ -8,7 +8,7 @@ Supported platforms:
 * Windows 2000 and newer
 * Linux on x86_64 & arm64 (ppc64 should work too, but i can't test it)
 * Mac OS X 10.4 ppc
-* Xbox (not fully functional)
+* Xbox
 
 Supported rendering APIs:
 * Direct3D8
