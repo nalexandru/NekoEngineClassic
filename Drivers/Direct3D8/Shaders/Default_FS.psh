@@ -1,0 +1,17 @@
+ps.1.1
+
+; NekoEngine Default Material Pixel Shader
+;
+; Textures
+; t0	- diffuse map
+;
+; Constants
+; c0	- diffuse color
+; c1	-
+; c2	-
+; c3	-
+
+tex t0
+mul r0, t0, c0
+
+;texld r0, t0	// ps.1.4

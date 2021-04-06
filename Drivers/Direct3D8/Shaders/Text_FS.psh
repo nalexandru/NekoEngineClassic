@@ -1,0 +1,15 @@
+ps.1.1
+
+; NekoEngine Text Pixel Shader
+;
+; Textures
+; t0	- text map
+
+def c0, 1.0, 1.0, 1.0, 1.0
+
+tex t0
+
+mov r0, v0
+mov r0.w, t0.a
+
+;texld r0, t0	// ps.1.4
